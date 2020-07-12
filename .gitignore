@@ -21,6 +21,7 @@ speed-measure-plugin*.json
 .project
 .classpath
 .c9/
+.firebaserc
 *.launch
 .settings/
 *.sublime-workspace
