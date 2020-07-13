@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { environment } from "../environments/environment";
+
+//Modules
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
+//Components
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -19,8 +21,11 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+
+// Services
 import {AuthService} from "./auth.service";
-import { AuthGurdService} from "./auth-gurd.service";
+import {AuthGuard} from "./auth-gurd.service";
+import {UserService} from "./user.service";
 
 
 @NgModule({
@@ -46,7 +51,9 @@ import { AuthGurdService} from "./auth-gurd.service";
     NgbModule,
   ],
   providers: [AuthService,
-              AuthGurdService],
+              AuthGuard,
+              UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

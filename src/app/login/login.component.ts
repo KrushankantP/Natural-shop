@@ -8,7 +8,6 @@ import {AuthService} from "../auth.service";
 export class LoginComponent {
 
   constructor(private _auth: AuthService) {
-    console.log('hello');
   }
 
   ngOnInit(): void {
