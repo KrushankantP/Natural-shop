@@ -21,6 +21,7 @@ export class ProductFormComponent implements OnInit {
     this.categories$ = _categoryService.getCategories();
 
     this.id = this._route.snapshot.paramMap.get('id');
+
     if (this.id) {
       this._productService.getProduct(this.id).pipe(take(1)).subscribe(p => {
         return this.product = p;
@@ -29,8 +30,10 @@ export class ProductFormComponent implements OnInit {
   }
 
   save(product) {
-    this._productService.create(product);
+    if (this.id) this._productService.update(this.id, product);
+    else this._productService.create(product);
     this._router.navigate(['/admin/products']);
+
   }
 
   ngOnInit(): void {
