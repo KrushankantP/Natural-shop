@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth-gurd.service";
 import {UserService} from "./user.service";
+import {AdminAuthGuardService} from "./admin-auth-guard.service";
 
 
 @NgModule({
@@ -50,9 +51,11 @@ import {UserService} from "./user.service";
     AppRoutingModule,
     NgbModule,
   ],
-  providers: [AuthService,
-              AuthGuard,
-              UserService
+  providers: [
+    AuthService,
+    AuthGuard,
+    AdminAuthGuardService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
