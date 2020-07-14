@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule} from "@angular/forms";
 
 //Components
 import { AppComponent } from './app.component';
@@ -28,6 +29,8 @@ import {AuthGuard} from "./auth-gurd.service";
 import {UserService} from "./user.service";
 import {AdminAuthGuardService} from "./admin-auth-guard.service";
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import {ProductService} from "./product.service";
+import {CategoryService} from "./category.service";
 
 
 @NgModule({
@@ -52,12 +55,15 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     AngularFireAuthModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule
   ],
   providers: [
     AuthService,
     AuthGuard,
     AdminAuthGuardService,
-    UserService
+    UserService,
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
