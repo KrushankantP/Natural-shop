@@ -9,6 +9,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from "@angular/forms";
+import { CustomFormsModule } from 'ng2-validation';
 
 //Components
 import { AppComponent } from './app.component';
@@ -55,7 +56,8 @@ import {CategoryService} from "./category.service";
     AngularFireAuthModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    CustomFormsModule
   ],
   providers: [
     AuthService,
