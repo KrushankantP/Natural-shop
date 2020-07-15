@@ -1,8 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProductService} from "../../product.service";
-
+import {ProductService} from "../../product.service"
 import {IProduct} from "../../models/IProduct";
-import {Subscription} from "rxjs";
+import { Subscription } from 'rxjs/Subscription'
 import {DataTableResource} from "angular5-data-table";
 
 @Component({
@@ -12,7 +11,6 @@ import {DataTableResource} from "angular5-data-table";
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
   products: IProduct[];
-  filteredProducts: any[];
   tableResource: DataTableResource<IProduct>;
   subscription: Subscription;
   items: IProduct[] = [];
@@ -49,7 +47,6 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
 
     this.initializeTable(filteredProducts);
   }
-
 
   ngOnDestroy(): void {
   this.subscription.unsubscribe();
