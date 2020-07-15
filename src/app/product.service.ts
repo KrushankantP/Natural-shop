@@ -13,7 +13,7 @@ export class ProductService {
   create(product) {
     return this.db.list('/products').push(product);
   }
-  getAll() {
+  getAllProducts() {
     return this.db.list('/products').snapshotChanges().pipe(map(actions=>{
       return actions.map(action=>({key: action.key, ...action.payload.val() as IProduct}));
     }));
