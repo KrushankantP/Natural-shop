@@ -16,13 +16,19 @@ export class AppComponent {
               _router: Router) {
 
     _auth.user$.subscribe(user => {
-      if (user) {
+      if (!user) {
+        return;
+      } else {
         _userService.save(user);
+      }
 
-        let returnUrl = localStorage.getItem('returnUrl');
-        _router.navigateByUrl(returnUrl).then(r => {
-
-        });
+      let returnUrl = localStorage.getItem('returnUrl');
+      //this will prevent you from redirecting to home page
+      if (!returnUrl) {
+        return;
+      } else {
+        localStorage.removeItem(returnUrl);
+        _router.navigateByUrl(returnUrl)
       }
     });
   }

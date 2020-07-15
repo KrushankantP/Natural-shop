@@ -9,7 +9,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from "@angular/forms";
-import { CustomFormsModule } from 'ng2-validation';
+import {DataTableModule} from "angular5-data-table";
 
 //Components
 import { AppComponent } from './app.component';
@@ -32,6 +32,7 @@ import {AdminAuthGuardService} from "./admin-auth-guard.service";
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import {ProductService} from "./product.service";
 import {CategoryService} from "./category.service";
+
 
 
 @NgModule({
@@ -57,7 +58,7 @@ import {CategoryService} from "./category.service";
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    CustomFormsModule
+    DataTableModule
   ],
   providers: [
     AuthService,
