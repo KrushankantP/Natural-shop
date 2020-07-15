@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
-import{IProduct} from "./models/IProduct";
+import {IProduct} from "./models/IProduct";
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -21,11 +21,11 @@ export class ProductService {
   getProduct(productId) {
     return this.db.object('/products/' + productId).valueChanges();
   }
-  update(productId, product) {
+  updateProduct(productId, product) {
     return this.db.object('/products/' + productId).update(product);
   }
 
-  delete(productId) {
+  deleteProduct(productId) {
     return this.db.object('/products/' + productId).remove();
   }
 }
