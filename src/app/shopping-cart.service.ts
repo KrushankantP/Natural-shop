@@ -37,7 +37,7 @@ export class ShoppingCartService {
   async addToCart(product: IProduct) {
     let cartId = await this.getOrCreateCartId();
     let item$ =  this.getItem(cartId, product.key);
-    item$.valueChanges().pipe(take(1)).subscribe(item => {
+    item$.snapshotChanges().pipe(take(1)).subscribe(item => {
       item$.update({ product: product, quantity: (item.quantity || 0) + 1 });
     });
   }
