@@ -27,4 +27,8 @@ export class OrderService {
       .list('/orders', ref => ref.orderByChild('userId').equalTo(userId))
       .valueChanges();
   }
+
+  getSingleOrder(id: any) {
+    return this.db.object('/orders/' + id).valueChanges();
+  }
 }

@@ -39,6 +39,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import {OrderService} from "./order.service";
+import { MyOrdersDetailComponent } from './my-orders/my-orders-detail/my-orders-detail.component';
 
 
 
@@ -60,7 +61,8 @@ import {OrderService} from "./order.service";
     ProductCardComponent,
     ProductQuantityComponent,
     ShoppingCartSummaryComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    MyOrdersDetailComponent
   ],
   imports: [
     BrowserModule,
