@@ -2,13 +2,14 @@
   <div class="list-group">
     <a class="list-group-item list-group-item-action"
        [class.active]="!category"
-       routerLink="/"
-    >All Categories</a>
+       routerLink="/">All Categories
+    </a>
     <a class="list-group-item list-group-item-action"
        routerLink="/"
-       *ngFor="let c of categories$ | async"
-       [queryParams]="{ category: c.key }"
-       [class.active]="category === c.key">{{ c.name }}</a>
+       *ngFor="let ctgry of categories$ | async"
+       [queryParams]="{ category: ctgry.key }"
+       [class.active]="category === ctgry.key">{{ ctgry.name }}
+    </a>
   </div>
 </div>
 
