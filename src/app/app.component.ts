@@ -13,23 +13,19 @@ export class AppComponent {
 
   constructor(private _userService:UserService,
               private _auth: AuthService,
-              _router: Router) {
+              private _router: Router)
+  {
+   this._auth.user$.subscribe(user => {
+      if (!user) return;
 
-    _auth.user$.subscribe(user => {
-      if (!user) {
-        return;
-      } else {
-        _userService.save(user);
-      }
+        this._userService.save(user);
 
       let returnUrl = localStorage.getItem('returnUrl');
       //this will prevent you from redirecting to home page
-      if (!returnUrl) {
-        return;
-      } else {
-        localStorage.removeItem(returnUrl);
-        _router.navigateByUrl(returnUrl)
-      }
+      if (!returnUrl) return;
+
+        localStorage.removeItem('returnUrl');
+        this._router.navigateByUrl(returnUrl);
     });
   }
 }

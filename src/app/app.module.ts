@@ -35,6 +35,10 @@ import {AdminAuthGuardService} from "./admin-auth-guard.service";
 import {ProductService} from "./product.service";
 import {CategoryService} from "./category.service";
 import {ShoppingCartService} from "./shopping-cart.service";
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import {OrderService} from "./order.service";
 
 
 
@@ -53,7 +57,10 @@ import {ShoppingCartService} from "./shopping-cart.service";
     LoginComponent,
     ProductFormComponent,
     ProductFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductQuantityComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +79,9 @@ import {ShoppingCartService} from "./shopping-cart.service";
     UserService,
     CategoryService,
     ProductService,
-    ShoppingCartService
+    ShoppingCartService,
+    OrderService
+
   ],
   bootstrap: [AppComponent]
 })
