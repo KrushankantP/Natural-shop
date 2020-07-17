@@ -6,7 +6,6 @@ import {UserService} from "./user.service";
 import {AppUser} from "./models/app-user";
 import * as firebase from "firebase";
 import {switchMap} from "rxjs/operators";
-import App = firebase.app.App;
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +33,8 @@ export class AuthService {
 
   get appUser$() : Observable<AppUser> {
     return this.user$
-      .pipe(switchMap(user => {
+      .pipe(
+        switchMap(user => {
         if(user !== null && user !== undefined)
           return this._userService.get(user.uid).valueChanges()
 
