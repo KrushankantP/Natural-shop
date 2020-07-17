@@ -10,6 +10,7 @@ import {DataTableResource} from "angular5-data-table";
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
+
   products: IProduct[];
   tableResource: DataTableResource<IProduct>;
   subscription: Subscription;
@@ -26,6 +27,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   }
+
+
   private initializeTable(products){
     this.tableResource = new DataTableResource(products);
     this.tableResource.query({offset: 0})
@@ -42,12 +45,14 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
 
   filter(query: string){
     let filteredProducts = (query) ?
-      this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) : this.products
+      this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase()))
+
+      : this.products
 
     this.initializeTable(filteredProducts);
   }
 
   ngOnDestroy(): void {
-  this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
 }
