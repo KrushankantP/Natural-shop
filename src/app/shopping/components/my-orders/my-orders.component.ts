@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import {Observable} from "rxjs";
-import {OrderService} from "../shared/services/order.service";
-import {AuthService} from "../shared/services/auth.service";
+import {OrderService} from "../../../shared/services/order.service";
+import {AuthService} from "../../../shared/services/auth.service";
 import {switchMap} from "rxjs/operators";
 
 @Component({

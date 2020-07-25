@@ -1,10 +1,10 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
-import {OrderService} from "../shared/services/order.service";
-import {AuthService} from "../shared/services/auth.service";
+import {OrderService} from "../../../shared/services/order.service";
+import {AuthService} from "../../../shared/services/auth.service";
 import {Router} from "@angular/router";
-import {ShippingAddress} from "../shared/models/shipping-address";
-import {Order} from "../shared/models/order";
+import {ShippingAddress} from "../../../shared/models/shipping-address";
+import {Order} from "../../../shared/models/order";
 
 
 @Component({

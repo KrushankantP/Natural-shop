@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ProductsComponent} from "./products/products.component";
-import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
+import {ProductsComponent} from "./shopping/components/products/products.component";
+import {ShoppingCartComponent} from "./shopping/components/shopping-cart/shopping-cart.component";
 import {OrderSuccessComponent} from "./order-success/order-success.component";
 import {CheckOutComponent} from "./check-out/check-out.component";
-import {LoginComponent} from "./login/login.component";
+import {LoginComponent} from "./core/components/login/login.component";
 import {AdminProductsComponent} from "./admin/components/admin-products/admin-products.component";
 import {AdminOrdersComponent} from "./admin/components/admin-orders/admin-orders.component";
-import {MyOrdersComponent} from "./my-orders/my-orders.component";
+import {MyOrdersComponent} from "./shopping/components/my-orders/my-orders.component";
 
 import {AuthGuard} from "./shared/services/auth-gurd.service";
 import {AdminAuthGuardService} from "./admin/services/admin-auth-guard.service";
 import {ProductFormComponent} from "./admin/components/product-form/product-form.component";
-import {MyOrdersDetailComponent} from "./my-orders/my-orders-detail/my-orders-detail.component";
+import {MyOrdersDetailComponent} from "./shopping/components/my-orders/my-orders-detail/my-orders-detail.component";
 
 
 const routes: Routes = [
