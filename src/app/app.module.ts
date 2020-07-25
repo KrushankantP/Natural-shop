@@ -32,14 +32,14 @@ import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-c
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 // Services
-import {AuthService} from "./auth.service";
-import {AuthGuard} from "./auth-gurd.service";
-import {UserService} from "./user.service";
+import {AuthService} from "./shared/services/auth.service";
+import {AuthGuard} from "./shared/services/auth-gurd.service";
+import {UserService} from "./shared/services/user.service";
 import {AdminAuthGuardService} from "./admin-auth-guard.service";
-import {ProductService} from "./product.service";
-import {CategoryService} from "./category.service";
-import {ShoppingCartService} from "./shopping-cart.service";
-import {OrderService} from "./order.service";
+import {ProductService} from "./shared/services/product.service";
+import {CategoryService} from "./shared/services/category.service";
+import {ShoppingCartService} from "./shared/services/shopping-cart.service";
+import {OrderService} from "./shared/services/order.service";
 
 
 

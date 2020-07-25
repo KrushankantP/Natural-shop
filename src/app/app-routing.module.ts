@@ -9,7 +9,7 @@ import {AdminProductsComponent} from "./admin/admin-products/admin-products.comp
 import {AdminOrdersComponent} from "./admin/admin-orders/admin-orders.component";
 import {MyOrdersComponent} from "./my-orders/my-orders.component";
 
-import {AuthGuard} from "./auth-gurd.service";
+import {AuthGuard} from "./shared/services/auth-gurd.service";
 import {AdminAuthGuardService} from "./admin-auth-guard.service";
 import {ProductFormComponent} from "./admin/product-form/product-form.component";
 import {MyOrdersDetailComponent} from "./my-orders/my-orders-detail/my-orders-detail.component";

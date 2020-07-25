@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ShoppingCart} from "../shared/models/shopping-cart";
 import {IProduct} from "../shared/models/IProduct";
-import {ShoppingCartService} from "../shopping-cart.service";
+import {ShoppingCartService} from "../shared/services/shopping-cart.service";
 import {Observable} from "rxjs";
 
 @Component({
