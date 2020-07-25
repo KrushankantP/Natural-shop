@@ -8,16 +8,6 @@ import {SharedModule} from "./shared/shared.module";
 
 //Components
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './shopping/components/products/products.component';
-import { ShoppingCartComponent } from './shopping/components/shopping-cart/shopping-cart.component';
-import {CheckOutComponent} from "./shopping/components/check-out/check-out.component";
-import {OrderSuccessComponent} from "./shopping/components/order-success/order-success.component";
-import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.component';
-import { ProductFilterComponent } from './shopping/components/products/product-filter/product-filter.component';
-import { MyOrdersDetailComponent } from './shopping/components/my-orders/my-orders-detail/my-orders-detail.component';
-import { ShoppingCartSummaryComponent} from "./shopping/components/shopping-cart-summary/shopping-cart-summary.component";
-import { ShippingFormComponent} from "./shopping/components/shipping-form/shipping-form.component";
-
 // Services
 import {AuthService} from "./shared/services/auth.service";
 import {AuthGuard} from "./shared/services/auth-gurd.service";
@@ -35,16 +25,7 @@ import {OrderService} from "./shared/services/order.service";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductsComponent,
-    ShoppingCartComponent,
-    CheckOutComponent,
-    OrderSuccessComponent,
-    MyOrdersComponent,
-    ProductFilterComponent,
-    ShoppingCartSummaryComponent,
-    ShippingFormComponent,
-    MyOrdersDetailComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
