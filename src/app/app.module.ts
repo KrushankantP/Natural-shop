@@ -35,7 +35,7 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import {AuthService} from "./shared/services/auth.service";
 import {AuthGuard} from "./shared/services/auth-gurd.service";
 import {UserService} from "./shared/services/user.service";
-import {AdminAuthGuardService} from "./admin-auth-guard.service";
+import {AdminAuthGuardService} from "./admin/services/admin-auth-guard.service";
 import {ProductService} from "./shared/services/product.service";
 import {CategoryService} from "./shared/services/category.service";
 import {ShoppingCartService} from "./shared/services/shopping-cart.service";

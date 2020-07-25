@@ -10,7 +10,7 @@ import {AdminOrdersComponent} from "./admin/components/admin-orders/admin-orders
 import {MyOrdersComponent} from "./my-orders/my-orders.component";
 
 import {AuthGuard} from "./shared/services/auth-gurd.service";
-import {AdminAuthGuardService} from "./admin-auth-guard.service";
+import {AdminAuthGuardService} from "./admin/services/admin-auth-guard.service";
 import {ProductFormComponent} from "./admin/components/product-form/product-form.component";
 import {MyOrdersDetailComponent} from "./my-orders/my-orders-detail/my-orders-detail.component";
 
