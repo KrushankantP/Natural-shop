@@ -4,8 +4,6 @@ import {OrderService} from "../order.service";
 import {AuthService} from "../auth.service";
 import {switchMap} from "rxjs/operators";
 
-
-
 @Component({
   selector: 'app-my-orders',
   templateUrl: './my-orders.component.html',

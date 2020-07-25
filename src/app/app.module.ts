@@ -9,7 +9,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from "@angular/forms";
-import {DataTableModule} from "angular5-data-table";
+import {DataTableModule} from "angular-6-datatable";
 
 //Components
 import { AppComponent } from './app.component';
@@ -26,6 +26,10 @@ import { LoginComponent } from './login/login.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { MyOrdersDetailComponent } from './my-orders/my-orders-detail/my-orders-detail.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 // Services
 import {AuthService} from "./auth.service";
@@ -35,11 +39,9 @@ import {AdminAuthGuardService} from "./admin-auth-guard.service";
 import {ProductService} from "./product.service";
 import {CategoryService} from "./category.service";
 import {ShoppingCartService} from "./shopping-cart.service";
-import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
-import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
-import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import {OrderService} from "./order.service";
-import { MyOrdersDetailComponent } from './my-orders/my-orders-detail/my-orders-detail.component';
+
+
 
 
 
@@ -85,6 +87,7 @@ import { MyOrdersDetailComponent } from './my-orders/my-orders-detail/my-orders-
     OrderService
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

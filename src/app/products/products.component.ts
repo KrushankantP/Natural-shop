@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {IProduct} from "../shared/models/IProduct";
 import {ProductService} from "../product.service";
 import {ActivatedRoute} from "@angular/router";
-import {IProduct} from "../models/IProduct";
 import {switchMap} from "rxjs/operators";
-import {Observable, Subscription} from "rxjs";
+import {Observable} from "rxjs";
 import {ShoppingCartService} from "../shopping-cart.service";
-import {ShoppingCart} from "../models/shopping-cart";
+import {ShoppingCart} from "../shared/models/shopping-cart";
 
 @Component({
   selector: 'app-products',

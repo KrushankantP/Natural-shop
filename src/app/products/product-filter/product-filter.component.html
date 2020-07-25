@@ -1,14 +1,14 @@
 <div class="sticky-top">
   <div class="list-group">
     <a class="list-group-item list-group-item-action"
-       [class.active]="!category"
-       routerLink="/">All Categories
+       [class.active]="!category" routerLink="/">
+      All Categories
     </a>
-    <a class="list-group-item list-group-item-action"
-       routerLink="/"
-       *ngFor="let ctgry of categories$ | async"
+    <a *ngFor="let ctgry of categories$ | async"
        [queryParams]="{ category: ctgry.key }"
-       [class.active]="category === ctgry.key">{{ ctgry.name }}
+       [class.active]="category === ctgry.key"
+       class="list-group-item list-group-item-action" routerLink="/">
+      {{ ctgry.name }}
     </a>
   </div>
 </div>

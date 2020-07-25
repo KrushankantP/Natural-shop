@@ -3,8 +3,8 @@ import {Subscription} from "rxjs";
 import {OrderService} from "../order.service";
 import {AuthService} from "../auth.service";
 import {Router} from "@angular/router";
-import {ShippingAddress} from "../models/shipping-address";
-import {Order} from "../models/order";
+import {ShippingAddress} from "../shared/models/shipping-address";
+import {Order} from "../shared/models/order";
 
 
 @Component({

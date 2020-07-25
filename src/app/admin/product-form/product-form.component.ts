@@ -4,6 +4,7 @@ import {ProductService} from "../../product.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {take} from "rxjs/operators";
 import {Observable} from "rxjs";
+import {IProduct} from "../../shared/models/IProduct";
 
 @Component({
   selector: 'app-product-form',
@@ -13,7 +14,7 @@ import {Observable} from "rxjs";
 export class ProductFormComponent implements OnInit {
 
   categories$: Observable<any[]>;
-  product = {} ;
+  product = {};
   id;
   constructor(private _router: Router,
               private _route: ActivatedRoute,

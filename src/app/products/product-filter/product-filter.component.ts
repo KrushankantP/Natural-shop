@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CategoryService} from "../../category.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'product-filter',
@@ -8,10 +9,10 @@ import {CategoryService} from "../../category.service";
 })
 export class ProductFilterComponent implements OnInit {
 
-  categories$;
+  categories$ : Observable<any[]>
   @Input('category') category;
 
-  constructor(_categoryService: CategoryService) {
+  constructor(private _categoryService: CategoryService) {
     this.categories$ = _categoryService.getAllCategories();
   }
 
