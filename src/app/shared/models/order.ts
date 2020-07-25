@@ -8,10 +8,10 @@ export class Order {
   constructor(
     public userId: string,
     public shipping: ShippingAddress,
-    shoppingCart: ShoppingCart
+    _shoppingCart: ShoppingCart
   ) {
     this.datePlaced = new Date().getTime();
-    this.items = shoppingCart.items.map(item => {
+    this.items = _shoppingCart.items.map(item => {
       return {
         product: {
           title: item.title,

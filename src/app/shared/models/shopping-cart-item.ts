@@ -1,5 +1,3 @@
-
-
 export class ShoppingCartItem {
   title: string;
   imageUrl: string;
