@@ -8,14 +8,14 @@ import {ProductFilterComponent} from "./components/products/product-filter/produ
 import {ShoppingCartSummaryComponent} from "./components/shopping-cart-summary/shopping-cart-summary.component";
 import {ShippingFormComponent} from "./components/shipping-form/shipping-form.component";
 import {MyOrdersDetailComponent} from "./components/my-orders/my-orders-detail/my-orders-detail.component";
-import {SharedModule} from "shared/shared.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 
 @NgModule({
   declarations: [
-    ProductsComponent,
     ShoppingCartComponent,
+    ProductsComponent,
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,

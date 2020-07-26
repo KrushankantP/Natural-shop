@@ -25,14 +25,15 @@ import {AuthGuard} from "./services/auth-gurd.service";
 
 
 @NgModule({
-  declarations: [ProductCardComponent,
-    ProductQuantityComponent],
+  declarations: [
+    ProductCardComponent,
+    ProductQuantityComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     CustomFormsModule,
     DataTableModule,
-    AppRoutingModule,
     NgbModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -44,7 +45,6 @@ import {AuthGuard} from "./services/auth-gurd.service";
     CustomFormsModule,
     DataTableModule,
     CommonModule,
-    AppRoutingModule,
     NgbModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -57,6 +57,6 @@ import {AuthGuard} from "./services/auth-gurd.service";
     ProductService,
     ShoppingCartService,
     OrderService
-  ]
+  ],
 })
 export class SharedModule { }

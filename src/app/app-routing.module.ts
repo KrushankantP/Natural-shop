@@ -8,7 +8,6 @@ import {LoginComponent} from "./core/components/login/login.component";
 import {AdminProductsComponent} from "./admin/components/admin-products/admin-products.component";
 import {AdminOrdersComponent} from "./admin/components/admin-orders/admin-orders.component";
 import {MyOrdersComponent} from "./shopping/components/my-orders/my-orders.component";
-
 import {AuthGuard} from "./shared/services/auth-gurd.service";
 import {AdminAuthGuardService} from "./admin/services/admin-auth-guard.service";
 import {ProductFormComponent} from "./admin/components/product-form/product-form.component";
@@ -22,7 +21,7 @@ const routes: Routes = [
   { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
   { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
   { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
-  {path: 'my/orders/:id', component: MyOrdersDetailComponent, canActivate: [AuthGuard]},
+  { path: 'my/orders/:id', component: MyOrdersDetailComponent, canActivate: [AuthGuard]},
   { path: 'login', component:LoginComponent},
 
   { path: 'admin/products/new',

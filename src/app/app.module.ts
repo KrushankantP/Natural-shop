@@ -4,21 +4,16 @@ import { environment } from "../environments/environment";
 
 //Modules
 import { AngularFireModule } from "@angular/fire";
-import {SharedModule} from "./shared/shared.module";
-import {AdminModule} from "./admin/admin.module";
-import {ShoppingModule} from "./shopping/shopping.module";
-import {CoreModule} from "./core/core.module";
+import { AdminModule } from "./admin/admin.module";
+import { ShoppingModule } from "./shopping/shopping.module";
+import { CoreModule } from "./core/core.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 //Components
 import { AppComponent } from './app.component';
 
 // Services
-import {AdminAuthGuardService} from "./admin/services/admin-auth-guard.service";
-
-
-
-
-
+import { AdminAuthGuardService } from "./admin/services/admin-auth-guard.service";
 
 
 @NgModule({
@@ -27,11 +22,10 @@ import {AdminAuthGuardService} from "./admin/services/admin-auth-guard.service";
   ],
   imports: [
     BrowserModule,
-    SharedModule,
-    AdminModule,
-    SharedModule,
-    ShoppingModule,
     CoreModule,
+    AdminModule,
+    ShoppingModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [
