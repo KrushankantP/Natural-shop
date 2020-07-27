@@ -5,6 +5,7 @@ import {AuthService} from "../../../shared/services/auth.service";
 import {Router} from "@angular/router";
 import {ShippingAddress} from "../../../shared/models/shipping-address";
 import {Order} from "../../../shared/models/order";
+import {ShoppingCart} from "../../../shared/models/shopping-cart";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
   shipping = {} as ShippingAddress;
   userId: string;
   subscription: Subscription;
-  @Input('cart') cart;
+  @Input('cart') cart: ShoppingCart;
 
   constructor(
     private _orderService: OrderService,
@@ -35,7 +36,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
   }
 
   async placeOrder() {
-    let order = new Order(this.userId, this.shipping, this.cart);
+    let order = new Order(this.userId, this.shipping, this.cart, this.cart.totalPrice);
     let result = await this._orderService.placeOrder(order);
     this._router.navigate(['/order-success', result.key]);
   }
