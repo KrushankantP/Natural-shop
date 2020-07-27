@@ -4,6 +4,7 @@ import {IProduct} from "../models/IProduct";
 import {take,map} from "rxjs/operators";
 import {ShoppingCart} from "../models/shopping-cart";
 import {Observable} from "rxjs";
+import {ShoppingCartItem} from "../models/shopping-cart-item";
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,10 @@ export class ShoppingCartService {
     this.updateItemQuantity(product, -1);
   }
 
+  async removeItem(item: ShoppingCartItem) {
+    let cartId = await this.getOrCreateCartId();
+    this.db.object('/shopping-carts/' + cartId + '/items/' + item.key).remove();
+  }
   async clearCart() {
     let cartId = await this.getOrCreateCartId();
     this.db.object('/shopping-carts/' + cartId + '/items').remove();

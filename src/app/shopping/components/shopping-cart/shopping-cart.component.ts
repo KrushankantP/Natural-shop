@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {ShoppingCart} from "../../../shared/models/shopping-cart";
 import {ShoppingCartService} from "../../../shared/services/shopping-cart.service";
-import {Router} from "@angular/router";
+import {IProduct} from "../../../shared/models/IProduct";
+import {ShoppingCartItem} from "../../../shared/models/shopping-cart-item";
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,8 +13,7 @@ import {Router} from "@angular/router";
 })
 export class ShoppingCartComponent implements OnInit {
   cart$: Observable<ShoppingCart>;
-  constructor(private _cartService: ShoppingCartService,
-              private _router: Router) { }
+  constructor(private _cartService: ShoppingCartService) { }
 
   async ngOnInit() {
     this.cart$ = await this._cartService.getCart();
@@ -22,4 +23,7 @@ export class ShoppingCartComponent implements OnInit {
     this._cartService.clearCart();
   }
 
+  removeItem(item: ShoppingCartItem) {
+    this._cartService.removeItem(item);
+  }
 }

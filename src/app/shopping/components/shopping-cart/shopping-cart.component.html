@@ -9,6 +9,7 @@
       <th>Product</th>
       <th class="text-center" style="width: 230px">Quantity</th>
       <th class="text-right" style="width: 200px">Price</th>
+      <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -18,7 +19,7 @@
           [style.backgroundImage]="'url(' + item.imageUrl + ')'">
         </div>
       </td>
-      <td>{{ item.title }}</td>
+      <td> {{ item.title }}</td>
       <td>
         <product-quantity
           [product]="item"
@@ -27,6 +28,9 @@
       </td>
       <td class="text-right">
         {{ item.totalPrice | currency: 'USD':'symbol' }}
+      </td>
+      <td>
+        <span class="btn btn-danger btn-sm" (click)="removeItem(item)">X</span>
       </td>
     </tr>
     </tbody>
