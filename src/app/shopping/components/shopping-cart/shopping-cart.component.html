@@ -1,7 +1,6 @@
 <h1>Shopping Cart</h1>
 <div class="row col-10" *ngIf="cart$ | async as cart">
   <p>You have {{ cart.totalItemCount }} items in your shopping cart</p>
-  <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-danger">Clear Shopping Cart</button>
   <table class="table">
     <thead>
     <tr>
@@ -30,7 +29,7 @@
         {{ item.totalPrice | currency: 'USD':'symbol' }}
       </td>
       <td>
-        <span class="btn btn-danger btn-sm" (click)="removeItem(item)">X</span>
+        <button class="btn btn-outline-danger" (click)="removeItem(item)"><i class="fa fa-trash-o"></i></button>
       </td>
     </tr>
     </tbody>
@@ -45,5 +44,8 @@
     </tr>
     </tfoot>
   </table>
-  <a routerLink="/check-out" *ngIf="cart.items.length" class="btn btn-primary">Check Out</a>
+  <div>
+    <a routerLink="/check-out" *ngIf="cart.items.length" class="btn btn-dark mx-2">Check Out</a>
+    <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-danger">Clear Shopping Cart</button>
+  </div>
 </div>

@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active">
       <i class="fa fa-leaf" aria-hidden="true"></i>
+
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -12,7 +13,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/shopping-cart">
+        <a class="nav-link" routerLink="/shopping-cart" routerLinkActive="active">
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;
           <span *ngIf="cart$ | async as cart"
                 class="badge badge-warning badge-pill">
@@ -23,22 +24,22 @@
     </ul>
     <ul class="navbar-nav">
       <ng-template #anonymousUser>
-        <li *ngIf="!appUser" class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
+        <li *ngIf="!appUser" class="nav-item text-white">
+          <a class="nav-link textColor" routerLink="/login">Login</a>
         </li>
       </ng-template>
       <li ngbDropdown *ngIf="appUser else anonymousUser" class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01"
-           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active">
             {{appUser.name}}
         </a>
         <div ngbDropdownMenu class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
-          <a class="dropdown-item bg-dark text-white" routerLink="/my/orders">My Orders</a>
+          <a class="dropdown-item bg-dark" routerLink="/my/orders" routerLinkActive="active">My Orders</a>
           <ng-container *ngIf="appUser.isAdmin">
-            <a class="dropdown-item bg-dark text-white" routerLink="/admin/orders">Manage Orders</a>
-            <a class="dropdown-item bg-dark text-white" routerLink="/admin/products">Manage Products</a>
+            <a class="dropdown-item bg-dark" routerLink="/admin/orders" routerLinkActive="active">Manage Orders</a>
+            <a class="dropdown-item bg-dark" routerLink="/admin/products" routerLinkActive="active">Manage Products</a>
           </ng-container>
-          <a class="dropdown-item pointer bg-dark text-white" (click)="logout()">Log Out</a>
+          <a class="dropdown-item bg-dark pointer" (click)="logout()">Log Out</a>
         </div>
       </li>
     </ul>
