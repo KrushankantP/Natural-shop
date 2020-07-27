@@ -16,9 +16,10 @@ export class MyOrdersDetailComponent implements OnInit {
   constructor(private _route: ActivatedRoute,
               private _orderService: OrderService)
   {
-    this.id = _route.snapshot.paramMap.get('id');
-    if(this.id) _orderService.getSingleOrder(this.id)
-      .pipe(take(1)).subscribe();
+    this.id = this._route.snapshot.paramMap.get('id');
+    if(this.id)
+      this._orderService.getSingleOrder(this.id)
+        .pipe(take(1)).subscribe()
   }
 
   async ngOnInit(){

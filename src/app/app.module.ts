@@ -13,7 +13,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from './app.component';
 
 // Services
-import { AdminAuthGuardService } from "./admin/services/admin-auth-guard.service";
+import { AdminAuthGuardService } from './admin/services/admin-auth-guard.service';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AdminAuthGuardService } from "./admin/services/admin-auth-guard.service
     AdminModule,
     ShoppingModule,
     AppRoutingModule,
+    RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [

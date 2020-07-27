@@ -19,10 +19,10 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent},
   { path: 'shopping-cart', component: ShoppingCartComponent},
   { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuard] },
-  { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
+  { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuard] },
   { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
-  { path: 'my/orders/:id', component: MyOrdersDetailComponent, canActivate: [AuthGuard]},
-  { path: 'login', component:LoginComponent},
+  { path: 'my/orders/:id', component: MyOrdersDetailComponent},
+  { path: 'login', component: LoginComponent},
 
   { path: 'admin/products/new',
     component: ProductFormComponent,
