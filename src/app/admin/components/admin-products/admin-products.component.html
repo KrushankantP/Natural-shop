@@ -1,38 +1,31 @@
-<p>
-  <a routerLink="/admin/products/new" class="btn btn-primary">New Products</a>
-</p>
-<p>
-  <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search...">
-</p>
+<div class="col-12">
+  <div class="row">
+    <div class="col-12">
+      <p>
+        <a routerLink="/admin/products/new" class="btn btn-dark">+ New Products</a>
+      </p>
 
-<table class="table table-striped" [mfData]="filteredProducts" #mf="mfDataTable" [mfRowsOnPage]="5">
-  <thead>
-  <tr>
-    <th style="width: 40%">
-      <mfDefaultSorter by="title">Title</mfDefaultSorter>
-    </th>
-    <th style="width: 50%">
-      <mfDefaultSorter by="price">Price</mfDefaultSorter>
-    </th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let product of mf.data">
-    <td>{{ product.title }}</td>
-    <td>{{ product.price | currency: 'USD':'symbol' }}</td>
-    <td>
-      <a [routerLink]="['/admin/products/', product.key]">Edit</a>
-    </td>
-  </tr>
-  </tbody>
-  <tfoot>
-  <tr>
-    <td colspan="4">
-      <mfBootstrapPaginator
-        [rowsOnPageSet]="[5, 10, 25]"
-      ></mfBootstrapPaginator>
-    </td>
-  </tr>
-  </tfoot>
-</table>
+      <p>
+        <input #query (keyup)="updateFilter($event)" type="text" class="form-control" placeholder="Search...">
+      </p>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-12">
+  <ngx-datatable
+    class="material"
+    [rowHeight]="'auto'"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [limit]="10"
+    [rows]="products"
+    [columns]="productColumn">
+  </ngx-datatable>
+
+  <ng-template #actionTemplate let-row="row" let-value="value" let-i="index">
+    <a (click)='onEdit(value)'><i class="fa fa-pencil-square-o fa-2x pointer" aria-hidden="true"></i></a>
+  </ng-template>
+  </div>
+</div>
+</div>
