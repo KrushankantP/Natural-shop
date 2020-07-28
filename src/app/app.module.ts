@@ -27,7 +27,6 @@ import {RouterModule} from "@angular/router";
     AdminModule,
     ShoppingModule,
     AppRoutingModule,
-    RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [

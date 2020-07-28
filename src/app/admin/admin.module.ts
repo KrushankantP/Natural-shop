@@ -4,6 +4,7 @@ import {AdminOrdersComponent} from './components/admin-orders/admin-orders.compo
 import {ProductFormComponent} from './components/product-form/product-form.component';
 import {SharedModule} from '../shared/shared.module';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import { AdminOrdersDetailsComponent } from './components/admin-orders/admin-orders-details/admin-orders-details.component';
 
 
 
@@ -12,11 +13,12 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
   declarations: [
     AdminProductsComponent,
     AdminOrdersComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    AdminOrdersDetailsComponent
   ],
-    imports: [
-        SharedModule,
-        NgxDatatableModule
-    ]
+  imports: [
+    SharedModule,
+    NgxDatatableModule,
+  ]
 })
 export class AdminModule { }
