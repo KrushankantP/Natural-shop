@@ -1,31 +1,102 @@
-<div class="col-12">
-  <div class="row">
-    <div class="col-12">
-      <p>
-        <a routerLink="/admin/products/new" class="btn btn-dark">+ New Products</a>
-      </p>
-
-      <p>
-        <input #query (keyup)="updateFilter($event)" type="text" class="form-control" placeholder="Search...">
-      </p>
-    </div>
+<div class="container">
+  <div class="search-div">
+    <button mat-raised-button  routerLink="/admin/products/new" class="btn btn-dark">
+      <mat-icon>add</mat-icon>Create
+    </button>
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput type="text" (keyup)="applyFilter()" placeholder="Search" [(ngModel)]="filterValue" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="filterValue" (click)="clearFilter()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
-<div class="row">
-  <div class="col-12">
-  <ngx-datatable
-    class="material"
-    [rowHeight]="'auto'"
-    [columnMode]="'force'"
-    [headerHeight]="50"
-    [footerHeight]="50"
-    [limit]="10"
-    [rows]="products"
-    [columns]="productColumn">
-  </ngx-datatable>
+  <div class="mat-elevation-z8">
+    <mat-table  [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+      <mat-cell *matCellDef="let product">{{ product.title }}</mat-cell>
+    </ng-container>
 
-  <ng-template #actionTemplate let-row="row" let-value="value" let-i="index">
-    <a (click)='onEdit(value)'><i class="fa fa-pencil-square-o fa-2x pointer" aria-hidden="true"></i></a>
-  </ng-template>
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+      <mat-cell *matCellDef="let product">{{ product.category }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        {{ product.price | currency: 'USD':'symbol' }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        <button mat-icon-button (click)="onEdit(product.key)"><mat-icon>launch</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef aria-colspan="6">
+          Loading Data...
+        </mat-footer-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef aria-colspan="6">
+          No data.
+        </mat-footer-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+      <mat-footer-row *matFooterRowDef="['loading']"
+                      [ngClass]="{'hide' :dataSource!= null}">
+
+       </mat-footer-row>
+      <mat-footer-row *matFooterRowDef="['noData']"
+                      [ngClass]="{'hide' :!(dataSource!=null && dataSource.data.length==0)}">
+
+      </mat-footer-row>
+  </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 25]" [pageSize]="5" showFirstLastButtons></mat-paginator>
   </div>
 </div>
-</div>
+
+
+<!--THIS IS A NGX-DATATABLE ------>
+
+
+<!--<div class="col-12">-->
+  <!--  <div class="row">-->
+  <!--    <div class="col-12">-->
+  <!--      <p>-->
+  <!--        <a routerLink="/admin/products/new" class="btn btn-dark">+ New Products</a>-->
+  <!--      </p>-->
+
+  <!--      <p>-->
+  <!--        <input #query (keyup)="updateFilter($event)" type="text" class="form-control" placeholder="Search...">-->
+  <!--      </p>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--<div class="row">-->
+  <!--  <div class="col-12">-->
+  <!--  <ngx-datatable-->
+  <!--    class="material"-->
+  <!--    [rowHeight]="'auto'"-->
+  <!--    [columnMode]="'force'"-->
+  <!--    [headerHeight]="50"-->
+  <!--    [footerHeight]="50"-->
+  <!--    [limit]="10"-->
+  <!--    [rows]="products"-->
+  <!--    [columns]="productColumn">-->
+  <!--  </ngx-datatable>-->
+
+  <!--  <ng-template #actionTemplate let-row="row" let-value="value" let-i="index">-->
+  <!--    <a (click)='onEdit(value)'><i class="fa fa-pencil-square-o fa-2x pointer" aria-hidden="true"></i></a>-->
+  <!--  </ng-template>-->
+  <!--  </div>-->
+  <!--</div>-->
+  <!--</div>-->
+

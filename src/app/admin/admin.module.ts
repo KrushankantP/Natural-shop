@@ -5,6 +5,8 @@ import {ProductFormComponent} from './components/product-form/product-form.compo
 import {SharedModule} from '../shared/shared.module';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { AdminOrdersDetailsComponent } from './components/admin-orders/admin-orders-details/admin-orders-details.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MaterialModule} from "../material/material.module";
 
 
 
@@ -19,6 +21,8 @@ import { AdminOrdersDetailsComponent } from './components/admin-orders/admin-ord
   imports: [
     SharedModule,
     NgxDatatableModule,
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class AdminModule { }
