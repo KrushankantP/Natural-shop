@@ -21,12 +21,19 @@ export class AuthService {
     this.user$ = this._afAuth.authState;
   }
 
-  login(){
+  googleLogin(){
     let returnUrl = this._route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
 
     this._afAuth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
+  fbLogin(){
+    let returnUrl = this._route.snapshot.queryParamMap.get('returnUrl') || '/';
+    localStorage.setItem('returnUrl', returnUrl);
+
+    this._afAuth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
+  }
+
 
   logout(){
     this._afAuth.signOut();

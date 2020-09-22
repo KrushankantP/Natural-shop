@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../../shared/services/auth.service";
+import {AuthService} from '../../../shared/services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,11 +11,13 @@ export class LoginComponent {
   constructor(private _auth: AuthService) {
   }
 
-  ngOnInit(): void {
-
+  loginFacebook() {
+    this._auth.fbLogin();
   }
 
-  login() {
-    this._auth.login();
+  loginGoogle() {
+    this._auth.googleLogin();
   }
+
+
 }
