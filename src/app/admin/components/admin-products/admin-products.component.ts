@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ProductService} from '../../../shared/services/product.service';
 import {IProduct} from '../../../shared/models/IProduct';
 import {Router} from "@angular/router";
@@ -13,7 +13,7 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './admin-products.component.html',
   styleUrls: ['./admin-products.component.css']
 })
-export class AdminProductsComponent implements OnInit,OnDestroy {
+export class AdminProductsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   displayedColumns = ['title', 'category', 'price', 'actions'];
   fieldsToFilter = ['title', 'category', 'price'];
@@ -29,13 +29,17 @@ export class AdminProductsComponent implements OnInit,OnDestroy {
     this.dataSource = new MatTableDataSource<IProduct>();
 
   }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = this._productService.getAllProducts()
       .subscribe(products => (this.dataSource.data = products));
+    this.dataSource.filterPredicate = this.customFilterPredicate;
+
+  }
+  ngAfterViewInit() {
+
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.dataSource.filterPredicate = this.customFilterPredicate;
+
   }
 
   ngOnDestroy() {
@@ -68,6 +72,8 @@ export class AdminProductsComponent implements OnInit,OnDestroy {
     console.log("id", key)
     this._router.navigate(['/admin/products', key]);
   }
+
+
 }
   /*-----------------------------------This is code is for NGX-dataTable-------------------------  */
 
