@@ -1,7 +1,7 @@
 <div *ngIf="product.title" class="card">
 
   <div class="card-header" style="background-color: whitesmoke"  >
-    <h5 class="card-title">{{ product.title }}</h5>
+    <h3 class="card-title"><strong>{{ product.title }}</strong></h3>
   </div>
 <div class="card-body" >
 
@@ -10,7 +10,7 @@
     <strong>{{ product.price | currency: 'USD':'symbol' }}</strong>
   </p>
 </div>
-<div class="card-footer" *ngIf="showActions && shoppingCart"  style="background-color: whitesmoke">
+<div class="card-footer" *ngIf="showActions && shoppingCart" style="background-color: whitesmoke">
   <button
     *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity"
     (click)="addToCart(product)"
