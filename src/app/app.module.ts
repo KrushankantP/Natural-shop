@@ -15,7 +15,10 @@ import { AppComponent } from './app.component';
 // Services
 import { AdminAuthGuardService } from './admin/services/admin-auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from "./material/material.module";
+import {HomeModule} from './home/home.module';
+import {ShoppingCartModule} from './shopping-cart/shopping-cart.module';
+import {CheckoutModule} from './checkout/checkout.module';
+import {OrdersModule} from './orders/orders.module';
 
 
 @NgModule({
@@ -27,9 +30,13 @@ import {MaterialModule} from "./material/material.module";
     CoreModule,
     AdminModule,
     ShoppingModule,
+    ShoppingCartModule,
+    CheckoutModule,
+    OrdersModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
+    HomeModule,
   ],
   providers: [
     AdminAuthGuardService,
