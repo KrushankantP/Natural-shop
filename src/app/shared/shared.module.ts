@@ -19,7 +19,7 @@ import {ShoppingCartService} from './services/shopping-cart.service';
 import {OrderService} from './services/order.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './services/auth-gurd.service';
-import {AppRoutingModule} from "../app-routing.module";
+import {RouterModule} from '@angular/router';
 
 
 
@@ -32,7 +32,7 @@ import {AppRoutingModule} from "../app-routing.module";
     CommonModule,
     FormsModule,
     CustomFormsModule,
-    AppRoutingModule,
+    RouterModule,
     NgbModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -42,7 +42,7 @@ import {AppRoutingModule} from "../app-routing.module";
     ProductQuantityComponent,
     FormsModule,
     CustomFormsModule,
-    AppRoutingModule,
+    RouterModule,
     CommonModule,
     NgbModule,
     AngularFireDatabaseModule,

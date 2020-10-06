@@ -5,6 +5,7 @@ import {ShoppingCartSummaryComponent} from './shopping-cart-summary/shopping-car
 import {ShippingFormComponent} from './shipping-form/shipping-form.component';
 import {OrderSuccessComponent} from './order-success/order-success.component';
 import {FormsModule} from '@angular/forms';
+import {CheckoutRoutingModule} from './checkout-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    CheckoutRoutingModule
   ]
 })
 export class CheckoutModule { }

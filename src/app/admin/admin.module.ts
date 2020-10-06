@@ -7,6 +7,7 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { AdminOrdersDetailsComponent } from './admin-orders-details/admin-orders-details.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "../material/material.module";
+import {AdminRoutingModule} from './admin-routing.module';
 
 
 
@@ -22,7 +23,8 @@ import {MaterialModule} from "../material/material.module";
     SharedModule,
     NgxDatatableModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    AdminRoutingModule
   ]
 })
 export class AdminModule { }
